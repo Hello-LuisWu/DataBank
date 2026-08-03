@@ -1,0 +1,230 @@
+{
+  "main": {
+    "id": "9c77974b1e65dc95",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5eb3f1a2f046eda",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a569d67d6dd16cf3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-计算机/Linux/命令/文件管理/06-ln.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "06-ln"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b845095880c14b47",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ce6d610cdfa34cf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "520e5ba36e0944c8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "7f613bc837987f8e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "360c8fe93ebfd1d9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "ed2fd2645c357085",
+    "type": "split",
+    "children": [
+      {
+        "id": "863b409b2d2e2dcf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f2a7a080ec8e4293",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "82fc2a1975f6e28c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "33840f4866845408",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "7030d1765a906faf",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "da86d9b754ae5a12",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "a569d67d6dd16cf3",
+  "lastOpenFiles": [
+    "01-计算机/Linux/命令/用户管理/02-adduser.md",
+    "01-计算机/Linux/命令/用户管理/01-useradd.md",
+    "01-计算机/Linux/命令/用户管理/05-usermod.md",
+    "01-计算机/Linux/命令/用户管理/05-chfn.md",
+    "01-计算机/Linux/命令/用户管理/05-chfn",
+    "01-计算机/Linux/命令/用户管理/06-groupadd.md",
+    "01-计算机/Linux/命令/用户管理/05-groupadd.md",
+    "01-计算机/Linux/命令/用户管理/08-su.md",
+    "01-计算机/Linux/命令/用户管理/04-userdel.md",
+    "01-计算机/Linux/命令/用户管理/04-su.md",
+    "01-计算机/Linux/命令/用户管理/04-su",
+    "01-计算机/Linux/命令/用户管理/02-useradd.md",
+    "01-计算机/Linux/命令/用户管理/03-passwd.md",
+    "01-计算机/Linux/命令/用户管理/01-adduser.md",
+    "01-计算机/Linux/命令/用户管理",
+    "01-计算机/Linux/命令/01-adduser.md",
+    "01-计算机/Linux/命令/02-useradd.md",
+    "01-计算机/Linux/命令/03-passwd.md",
+    "01-计算机/Linux/arch/换源/README.md",
+    "01-计算机/Linux/arch/换源",
+    "01-计算机/Linux/arch",
+    "01-计算机/tools/zsh/README.md",
+    "01-计算机/tools/zsh",
+    "01-计算机/tools/git/zsh",
+    "01-计算机/Linux/命令/文件管理/01-cp.md",
+    "01-计算机/Linux/命令/磁盘管理/02-ls.md",
+    "01-计算机/Linux/命令/磁盘管理/01-cd.md",
+    "Pasted image 20260802153258.png",
+    "01-计算机/Linux/命令/系统管理/03-passwd.md",
+    "01-计算机/Linux/命令/系统管理/02-useradd.md",
+    "01-计算机/Linux/命令/系统管理/01-adduser.md",
+    "01-计算机/Linux/命令/系统管理/07-chsh.md",
+    "01-计算机/Linux/命令/系统管理/06-exit.md",
+    "01-计算机/Linux/命令/LinuxCmd.md",
+    "01-计算机/Linux/命令/系统管理",
+    "01-计算机/Linux/命令/磁盘管理",
+    "01-计算机/Linux/命令/文件管理",
+    "01-计算机/Linux/命令/文件管理/img/wjqx.png"
+  ]
+}
