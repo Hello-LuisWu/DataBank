@@ -1,5 +1,8 @@
 {
   "alwaysUpdateLinks": true,
   "defaultViewMode": "source",
-  "livePreview": true
+  "livePreview": true,
+  "showLineNumber": true,
+  "strictLineBreaks": false,
+  "vimMode": true
 }

@@ -2,6 +2,14 @@
 
 建立用户帐号，用 passwd 设定帐号的密码。而可用 userdel 删除帐号。实际上是保存在 /etc/passwd 文本文件中。
 
+## 格式
+
+```sh
+useradd [选项] 用户名
+```
+
+## 参数
+
 | options         | info                                               |
 |-----------------|----------------------------------------------------|
 | `-m`            | 为用户创建家目录,会创建 `/home/用户名`             |
@@ -16,28 +24,41 @@
 | `-f 7`          | 指定在密码过期后多少天即关闭该帐号                 |
 | `-r`            | 建立系统帐号                                       |
 | `-u 2000`       | 指定用户 uid                                       |
-|
 
-**01. -m 创建家目录:**
+## 实例
+
+### 01. -m 创建家目录:
+
+创建 `/home/username`
 
 ```sh
 sudo useradd -m luis
+
+# 结果:
+/home/luis
 ```
 
-**02. -d 指定用户家目录:**
+不加 `-m` 则 `/home/luis` 就不存在
+
+### 02. -d 指定用户家目录:
 
 ```sh
 sudo useradd -m -d /data/luis luis
 
 # 结果:
-# /data/luis
+/data/luis
 
 # 而不是:
-# /home/luis
+/home/luis
 
+# 查看:
+grep luis /etc/passwd
+
+# 输出:
+luis:x:1001:1001::/data/luis:/bin/bash
 ```
 
-**03. -g 为用户添加组(不指定组名,默认会创建和用户名一样的组):**
+### 03. -g 为用户添加主组
 
 ```sh
 useradd -m -g global luis
@@ -49,10 +70,18 @@ useradd -m -g global luis
 #
 #    主组:
 #    global
-#    
+
+# 查看:
+id luis
+
+# 输出:
+uid=1001(luis)
+gid=1002(global)
 ```
 
-**04. -G 添加附加组:**
+不加 `-g` 则默认创建和用户名一样的组
+
+### 04. -G 添加附加组:
 
 ```sh
 sudo useradd -m -G wheel,docker luis
@@ -64,9 +93,15 @@ sudo useradd -m -G wheel,docker luis
 #    附加组:
 #    wheel
 #    Docker
+
+# 查看:
+groups luis
+
+# 输出:
+luis : luis wheel docker
 ```
 
-**05. -s 指定登录 Shell:** 
+### 05. -s 指定登录 Shell
 
 ```sh
 sudo useradd -m -s /bin/zsh luis
@@ -78,19 +113,39 @@ echo $SHELL
 /bin/zsh
 ```
 
-**06. -c 添加用户备注:**
+### 06. -c 添加用户备注:
 
 ```sh
 sudo useradd -m -c "Developer Account" luis
+
+# 查看：
+grep luis /etc/passwd
+
+# 显示:
+luis:x:1001:1001:Developer Account:/home/luis:/bin/bash
 ```
 
-**07. -u 指定 UID:**
+### 07. -u 指定 UID:
 
 ```sh
 sudo useradd -m -u 2000 luis
+
+# 查看:
+id luis
 ```
 
-**08. -r 创建系统用户:**
+用途：
+- 服务器迁移
+- NFS
+- Docker 映射权限
+
+例如：
+服务器 A：`luis UID=1000`
+服务器 B：`luis UID=1000`
+
+文件权限不会混乱。
+
+### 08. -r 创建系统用户:
 
 ```sh
 sudo useradd -r nginx
@@ -101,7 +156,7 @@ sudo useradd -r nginx
 - 不创建 home
 - 用于服务程序,例如:nginx mysql redis 等
 
-**09. -e 设置账号过期时间:**
+### 09. -e 设置账号过期时间:
 
 ```sh
 sudo useradd -e 2026-12-31 test
@@ -112,18 +167,15 @@ sudo useradd -e 2026-12-31 test
 chage -l test
 ```
 
-**10. -f 密码过期后多少天禁用:**
+### 10. -f 密码过期后多少天禁用:
 
 ```sh
-# 格式:
--f 天数
-
 sudo useradd -f 7 luis
 ```
 
 密码过期后7天后禁用账号!
 
-**11. -p 设置密码（不推荐）:**
+### 11. -p 设置密码（不推荐）:
 
 ```sh
 sudo useradd -p '$6$xxx' luis
@@ -131,10 +183,16 @@ sudo useradd -p '$6$xxx' luis
 
 推荐 `passwd luis`
 
-**12. -D 查看 useradd 默认配置:**
+### 12. -D 查看 useradd 默认配置:
 
 ```sh
 useradd -D
+
+# 例如:
+GROUP=100
+HOME=/home
+SHELL=/bin/bash
+SKEL=/etc/skel
 ```
 
 修改默认 shell:
@@ -142,12 +200,15 @@ useradd -D
 ```sh
 sudo useradd -D -s /bin/zsh
 
+# 然后:
 useradd -m test
 ```
 
+默认就是 `/bin/zsh`
+
 ## 账户创建模版
 
-**0. 创建普通开发用户（推荐）:**
+### 0. 创建普通开发用户（推荐）:
 
 ```sh
 sudo useradd \
@@ -161,21 +222,21 @@ sudo passwd luis
 ```
 
 
-**1. 个人配置用户:**
+### 1. 个人配置用户:
 
 ```sh
 sudo useradd -m -s /bin/zsh -G wheel luis
 sudo passwd luis
 ```
 
-**2. 创建 Ubuntu用户:**
+### 2. 创建 Ubuntu用户:
 
 ```sh
 sudo useradd -m -s /bin/bash -G sudo luis
 sudo passwd luis
 ```
 
-**3. 创建 Arch Linux 管理员用户:**
+### 3. 创建 Arch Linux 管理员用户:
 
 ```sh
 sudo useradd \
@@ -200,13 +261,13 @@ sudo visudo
 %wheel ALL=(ALL:ALL) ALL
 ```
 
-**4. 服务器服务账号：**
+### 4. 服务器服务账号:
 
 ```sh
 sudo useradd -r -s /usr/sbin/nologin service
 ```
 
-**4. 创建 Web 服务账号:**
+### 5. 创建 Web 服务账号:
 
 ```sh
 sudo useradd \
