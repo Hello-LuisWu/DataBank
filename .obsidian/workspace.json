@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "47ac672a16e608a7",
+        "id": "0c82a5c442c9704a",
         "type": "tabs",
         "children": [
           {
-            "id": "053fc70abaffd03c",
+            "id": "56aadcc141dd1c73",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01-计算机/Linux/命令/符号应用/Linux 中连接多个命令的符号详解.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Linux 中连接多个命令的符号详解"
+              "title": "新标签页"
             }
           }
         ]
@@ -186,8 +182,11 @@
       "switcher:打开快速切换": false
     }
   },
-  "active": "520e5ba36e0944c8",
+  "active": "56aadcc141dd1c73",
   "lastOpenFiles": [
+    "01-计算机/Linux/命令/符号应用/Linux 中连接多个命令的符号详解.md",
+    "01-计算机/Linux/命令/符号应用/命令中括号的使用技巧详解.md",
+    "README.md",
     "05-英语/音标/音标笔记.docx",
     "05-英语/音标/音标.xmind",
     "05-英语/音标",
@@ -199,9 +198,6 @@
     "05-英语",
     "b.txt",
     "c.txt",
-    "b.tzt",
-    "01-计算机/Linux/命令/符号应用/命令中括号的使用技巧详解.md",
-    "01-计算机/Linux/命令/符号应用/Linux 中连接多个命令的符号详解.md",
     "01-计算机/Linux/命令/系统管理/03-systemctl.md",
     "01-计算机/Linux/Linux 文件系统.md",
     "01-计算机/Linux/命令/文件管理/04-rm.md",

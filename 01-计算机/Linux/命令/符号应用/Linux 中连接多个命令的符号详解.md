@@ -349,7 +349,7 @@ echo "hello linux" | grep hello
         |          |          |
         <          <<         <<<
         |          |          |
-      文件      多行文本    字符串
+       文件      多行文本     字符串
 
 
 sort < a.txt
