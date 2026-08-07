@@ -11,13 +11,32 @@
             "id": "56aadcc141dd1c73",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "01-计算机/Linux/命令/符号应用/02-Linux 中连接多个命令的符号详解.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "02-Linux 中连接多个命令的符号详解"
+            }
+          },
+          {
+            "id": "8ff7bbfca4f55d2d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-计算机/Linux/命令/符号应用/02-Linux 中连接多个命令的符号详解.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "02-Linux 中连接多个命令的符号详解"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -182,10 +201,10 @@
       "switcher:打开快速切换": false
     }
   },
-  "active": "56aadcc141dd1c73",
+  "active": "8ff7bbfca4f55d2d",
   "lastOpenFiles": [
-    "01-计算机/Linux/命令/符号应用/Linux 中连接多个命令的符号详解.md",
-    "01-计算机/Linux/命令/符号应用/命令中括号的使用技巧详解.md",
+    "01-计算机/Linux/命令/符号应用/01-命令中括号的使用技巧详解.md",
+    "01-计算机/Linux/命令/符号应用/02-Linux 中连接多个命令的符号详解.md",
     "README.md",
     "05-英语/音标/音标笔记.docx",
     "05-英语/音标/音标.xmind",
