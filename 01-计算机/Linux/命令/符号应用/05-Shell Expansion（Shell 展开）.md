@@ -19,11 +19,11 @@
 
 ### 1 花括号展开 Brace Expansion `{}`
 
-详情请参考：[[01-命令中括号的使用技巧详解]]
+详情请参考：[01-命令中括号的使用技巧详解](https://github.com/Hello-LuisWu/DataBank/blob/main/01-%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E5%91%BD%E4%BB%A4/%E7%AC%A6%E5%8F%B7%E5%BA%94%E7%94%A8/01-%E5%91%BD%E4%BB%A4%E4%B8%AD%E6%8B%AC%E5%8F%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E8%AF%A6%E8%A7%A3.md)
 
 ### 2 序列展开 Brace Range `{..}`
 
-详情请参考：[[01-命令中括号的使用技巧详解]]
+详情请参考：[01-命令中括号的使用技巧详解](https://github.com/Hello-LuisWu/DataBank/blob/main/01-%E8%AE%A1%E7%AE%97%E6%9C%BA/Linux/%E5%91%BD%E4%BB%A4/%E7%AC%A6%E5%8F%B7%E5%BA%94%E7%94%A8/01-%E5%91%BD%E4%BB%A4%E4%B8%AD%E6%8B%AC%E5%8F%B7%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7%E8%AF%A6%E8%A7%A3.md)
 
 ### 3 家目录展开 Tilde Expansion `~`
 
@@ -65,7 +65,7 @@ echo $name
 Linux
 ```
 
-详情请查看：[[06-Linux 环境变量详解|Linux 环境变量详解]]
+详情请查看：[[01-Linux 环境变量详解|Linux 环境变量详解]]
 
 ### 5 命令替换 Command Substitution `$()`
 
@@ -95,7 +95,7 @@ $HOME
 
 用单引号 `'` 引用变量，内部所有字符都按字面意思处理。
 
-详情请查看：[[06-Linux 环境变量详解|Linux 环境变量详解]]
+详情请查看：[[01-Linux 环境变量详解|Linux 环境变量详解]]
 
 ### 9 双引号 Quote Expansion `"`
 
@@ -110,7 +110,7 @@ echo "$HOME"
 
 用双引号 `"` 引用变量，允许解析内部的变量和命令
 
-详情请查看：[[06-Linux 环境变量详解|Linux 环境变量详解]]
+详情请查看：[[01-Linux 环境变量详解|Linux 环境变量详解]]
 
 ### 转义字符 Escape `\` 
 
