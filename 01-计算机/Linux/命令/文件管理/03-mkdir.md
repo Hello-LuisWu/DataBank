@@ -9,6 +9,7 @@ mkdir [选项] [path/目录名]
 ```
 
 ---
+
 ## 选项
 
 | 选项   | 说明             | 示例                  |
@@ -68,7 +69,7 @@ mkdir -m 700 private
 mkdir -m 777 share
 ```
 
-### 创建网站目录结构
+### 06 创建网站目录结构
 
 ```sh
 mkdir -p website/{css,js,img}
