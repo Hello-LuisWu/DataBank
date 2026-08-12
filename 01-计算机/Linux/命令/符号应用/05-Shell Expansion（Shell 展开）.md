@@ -14,6 +14,7 @@
 | Quote Expansion      | `' '`    | 单引号   | 禁止展开      | `'$HOME'`  |
 | Quote Expansion      | `" "`    | 双引号   | 保留变量展开    | `"$HOME"`  |
 | Escape               | `\`      | 转义    | 禁止特殊含义    | `\$USER`   |
+|                      |          |       |           |            |
 
 ## 实例
 

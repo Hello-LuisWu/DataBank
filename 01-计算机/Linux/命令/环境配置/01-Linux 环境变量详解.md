@@ -44,13 +44,6 @@ Linux
 
 # 正确: = 两边不能有空格
 my_name="John"
-
-
-# 打印变量：
-echo $my_name
-
-# 结果：
-John
 ```
 
 ### 2.1 命名规则
@@ -73,7 +66,54 @@ user-name
 user.name
 ```
 
-### 2.2 定义中符号的使用
+### 2.2 定义普通变量
+
+```sh
+name"Luis"
+```
+
+### 2.3 定义环境变量
+
+```sh
+export name="Luis"
+```
+
+### 2.4 普通变量与环境变量的区别
+
+子(程序) shell 不能共享本地变量，环境变量对当前SHELL及其子SHELL有效。
+
+```sh
+# 普通变量：
+name="luis"
+bash # 进入子(shell)进程 
+echo $name # 子进程无法调用普通变量
+#结果：
+空值
+
+# 用 export 设置环境变量
+export name="luis"
+bash # 进入子(shell)进程
+echo $name # 子进程可以调用变量值
+# 结果：
+luis
+```
+
+### 2.5 变量引用
+
+变量引用就是在变量名前加 `$`，例如 `echo $name`，Shell 会将 `$name` 展开为变量中保存的值。  
+
+```sh
+# 定义变量
+name="Luis"
+
+# 打印变量
+echo $name # $ 后面紧跟变量名
+
+# 结果：
+Luis
+```
+
+### 2.6 定义中符号的使用
 
 - **无引号** `$var` ：**基本引用**，变量值中没有特殊字符时可以省略引号。`my_var=hello`
 - **单引号** `'$ver'` ：**强引用**，原样输出引号内的所有内容，变量名会被当做普通字符处理。`literal='Hello, $my_name'`（输出 `Hello, $my_name`）
@@ -122,106 +162,7 @@ echo $info
 No User-14
 ```
 
-### 2.3 用 export 设置变量
-
-```sh
-# 设置变量尽量加上双引号
-
-# 单变量值
-export 变量名="路径1"
-
-# 多变量值
-export 变量名="路径1:路径2:路径3:路径4"
-
-# 引用变量作为变量值
-export 变量名="${变量1}:${变量2}:路径1:路径2"
-```
-
-### 2.4 环境变量与本地(普通)变量的区别
-
-子(程序) shell 不能共享本地变量，环境变量对当前SHELL及其子SHELL有效。
-
-```sh
-# 普通变量：
-name="luis"
-bash # 进入子(shell)进程 
-echo $name # 子进程无法调用普通变量
-
-# 用 export 设置环境变量
-export name="luis"
-bash # 进入子(shell)进程
-echo $name # 子进程可以调用变量值
-# 结果：
-luis
-```
-
-### 2.5 `.zshrc` / `.bashrc` 配置文件写法
-
-用 `:` 作为追加分隔符
-
-1. 如果直接写成 `export "PATH=/.../.../..."`, 这样新添加的值会覆盖 `PATH` 之前的所有的变量值,若想不覆盖就要书写成 `export PATH="/.../...:${PATH}"`
-    - `$PATH` 的作用是新加的路径也包含自己, 相当于引用了 `PATH` 自己现有的变量值
-    - `:` 的作用是变量值追加， 如: `export PATH="${HOME}/nvim/:/tmp/:${PATH}"` , `:` 后面加上自己要追加的变量或变量值, 新加的变量会追加到 `PATH` 里面
-
-**cargo（rust）：**
-
-```sh
-export PATH="${HOME}/.cargo/bin:${PATH}"
-```
-
-**go：**
-
-```sh
-export PATH="${PATH}:${HOME}/go/bin"
-```
-
-**Node 全局包：**
-
-```sh
-export PATH="${PATH}:${HOME}/.npm-global/bin"
-```
-
-**用户脚本目录：**
-
-```sh
-export PATH="${HOME}/bin:${PATH}"
-```
-
-在 PATH 后面追加：
-
-```sh
-export PATH="${PATH}:${HOME}/bin"
-```
-
-**避免 PATH 重复追加：**
-
-```sh
-# 如果每次打开终端都会加载：
-export PATH="${PATH}:${HOME}/bin"
-
-# 第一次：
-/usr/bin:/home/user/bin
-# 第二次：
-/usr/bin:/home/user/bin:/home/user/bin
-# 第三次：
-/usr/bin:/home/user/bin:/home/user/bin:/home/user/bin
-
-# 判断是否重复加载:
-if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
-    export PATH="${HOME}/bin:${PATH}"
-fi
-```
-
-
-**使用 `${}` 添加多个目录：**
-
-例如：
-
-```sh
-export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
-```
-
-### 2.6 环境变量的持久化
+### 2.7 环境变量的持久化
 
  变量周期分类:
 1. **零时变量**: 用 `export` 命令在终端临时声明，重启 Shell 变量就会失效
@@ -236,7 +177,7 @@ export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 2. **系统级**: 对该系统中所有用户都有效
     - 变量写进 `/etc` 目录下的 `profile`, 或 `environment` 文件里面
 
-### 2.7 只读变量 readonly
+### 2.8 只读变量 readonly
 
 ```sh
 readonly VERSION="1.0"
@@ -248,7 +189,7 @@ VERSION="2.0"
 bash: VERSION: readonly variable
 ```
 
-### 2.8 数组变量
+### 2.9 数组变量
 
 ```sh
 arr=("Linux" "Shell" "Bash")
@@ -269,7 +210,7 @@ echo ${#arr[@]}
 3
 ```
 
-### 2.9 命令替换变量 
+### 2.10 命令替换变量 
 
 将命令结果保存
 
@@ -370,15 +311,86 @@ Line2
 Line3
 ```
 
+
+### 2.5 PATH 追加
+
+`PATH` 变量用于指定 Shell 查找和执行命令时搜索的目录列表。 `PATH` 是系统自带的环境变量。
+
+1. 若直接赋值 `export "PATH=/.../.../..."`, 这样新添加的值会覆盖 `PATH` 之前的所有的值
+2. 若想不覆盖就要书写成 `export PATH="/.../...:${PATH}"`
+	 - `$PATH` 的作用是新加的路径也包含自己, 相当于引用了 `PATH` 自己现有的变量值
+	- `:` 是变量分隔符。作用是变量值的追加， 如: `export PATH="${HOME}/nvim/:/tmp/:${PATH}"` , `:` 后面加上自己要追加的变量或变量值, 新加的变量会追加到 `PATH` 里面
+
+#### 常见的工具命令目录
+
+**cargo（rust）：**
+
+```sh
+export PATH="${HOME}/.cargo/bin:${PATH}"
+```
+
+**go：**
+
+```sh
+export PATH="${PATH}:${HOME}/go/bin"
+```
+
+**Node 全局包：**
+
+```sh
+export PATH="${PATH}:${HOME}/.npm-global/bin"
+```
+
+**用户脚本目录：**
+
+```sh
+export PATH="${HOME}/bin:${PATH}"
+```
+
+在 PATH 后面追加：
+
+```sh
+export PATH="${PATH}:${HOME}/bin"
+```
+
+**避免 PATH 重复追加：**
+
+```sh
+# 如果每次打开终端都会加载：
+export PATH="${PATH}:${HOME}/bin"
+
+# 第一次：
+/usr/bin:/home/user/bin
+# 第二次：
+/usr/bin:/home/user/bin:/home/user/bin
+# 第三次：
+/usr/bin:/home/user/bin:/home/user/bin:/home/user/bin
+
+# 判断是否重复加载:
+if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    export PATH="${HOME}/bin:${PATH}"
+fi
+```
+
+**使用 `${}` 添加多个目录：**
+
+例如：
+
+```sh
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+```
+
+> 不想重复设置可以将命令写在`.zshrc` / `.bashrc` 配置文件内
+
 ---
 
-## 🔍 4 变量的引用与操作
+## 🔍 4 变量的引用与操作详解
 
-**引用变量**：在变量名前加 `$` 符号[](https://cloud.tencent.com.cn/developer/article/1960147?policyId=1003)。推荐使用 `${variable}` 的形式，它能明确变量边界，防止变量名冲突，并支持高级操作[](https://bbs.huaweicloud.com/blogs/465171)。
+在变量名前加 `$` 符号[](https://cloud.tencent.com.cn/developer/article/1960147?policyId=1003)。推荐使用 `${variable}` 的形式，它能明确变量边界，例如 `echo "${name}123"`，这样可以避免变量名与后面的字符串混淆，并支持高级操作[](https://bbs.huaweicloud.com/blogs/465171)。
 ### 4.1 加不加花括号的区别：
 
 ```sh
-name="luis"
+name="LuisWu"
 
 # 不可花括号 ${xxx}
 echo "$name_hello"
@@ -386,14 +398,14 @@ echo "$name_hello"
 # $name和_hello 被视为一个整体，也就是变量名为 $name_hello 的变量。而此变量并未定义，所以无法打印变量值
 
 # 加了花括号 ${xxx}
-echo "${name}_hello" # 变量名用花括号 ${xxx} 规定了变量名的边界在哪。边界以外的字符无法影响内部的变量值
+echo "${name}_hello" # 变量名用花括号括起来，规定了变量名的边界在哪。边界以外的字符无法影响内部的变量名
 # 结果：
-luis_hello 
+luisWu_hello 
 ```
 
 ### 4.2 变量引用中的引号
 
-引用的引号作用和赋值引号的作用类似
+引用的引号作用和赋值引号的作用类似，详情请查看：[定义中符号的使用](#2.6 定义中符号的使用)
 
 ```sh
 name="luis"
