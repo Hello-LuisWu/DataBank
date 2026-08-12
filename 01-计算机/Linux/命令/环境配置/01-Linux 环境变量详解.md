@@ -80,7 +80,7 @@ export name="Luis"
 
 ### 2.4 普通变量与环境变量的区别
 
-子(程序) shell 不能共享本地变量，环境变量对当前SHELL及其子SHELL有效。
+子(程序) shell 不能共享普通变量，环境变量对当前 shell 及其子 shell 都有效。
 
 ```sh
 # 普通变量：
