@@ -1,6 +1,12 @@
 # cat
 
-concatenate 命令用于连接文件并打印到标准输出设备上，它的主要作用是用于查看和连接文件。
+`cat`（concatenate）意为**连接、拼接**，用于：
+
+- 查看文件内容
+- 合并多个文件
+- 创建文件
+- 追加文件内容
+- 配合重定向处理文本
 
 ## 语法
 
@@ -12,14 +18,17 @@ cat [选项] [文件]
 
 ## 选项
 
-| 选项   | 说明                |
-| ---- | ----------------- |
-| `-n` | 显示行号              |
-| `-b` | 显示行号，但只对非空行进行编号。  |
-| `-s` | 压缩连续的空行，只显示一个空行。  |
-| `-E` | 在每一行的末尾显示 `$` 符号。 |
-| `-T` | 将 Tab 字符显示为 `^I`。 |
-| `-t` | 显示一些非打印字符。        |
+|参数|全称|作用|示例|
+|---|---|---|---|
+|`-n`|number|显示所有行号|`cat -n file.txt`|
+|`-b`|number-nonblank|只给非空行编号|`cat -b file.txt`|
+|`-s`|squeeze-blank|压缩连续空行|`cat -s file.txt`|
+|`-A`|show-all|显示所有隐藏字符|`cat -A file.txt`|
+|`-E`|show-ends|显示行尾 `$`|`cat -E file.txt`|
+|`-T`|show-tabs|显示 Tab 字符|`cat -T file.txt`|
+|`-v`|show-nonprinting|显示不可打印字符|`cat -v file.txt`|
+|`-e`|等价 `-vE`|显示特殊字符和行尾|`cat -e file.txt`|
+|`-t`|等价 `-vT`|显示 Tab 和特殊字符|`cat -t file.txt`|
 
 ---
 
